@@ -16,9 +16,6 @@ const PaginationTable = () => {
     const db = getFirestore();
     await deleteDoc(doc(db, coleccion, id));
     Swal.fire("EXITO!", "SUS DATOS DE ELIMINARON CORRECTAMENTE", "success");
-    setTimeout(() => {
-      window.location.reload();
-    }, 3000);
   };
 
   return (
