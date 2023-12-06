@@ -23,7 +23,7 @@ const PaginationTable = () => {
   const deletear = async (coleccion, id) => {
     const db = getFirestore();
     await deleteDoc(doc(db, coleccion, id));
-    mostrarAlerta();
+    mostrarAlerta;
   };
 
   return (
