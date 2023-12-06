@@ -11,19 +11,14 @@ const PaginationTable = () => {
   const [valueSelect, setValueSelect] = useState("ingreso");
   const cash = useDbList(valueSelect);
   const maximo = cash.length / porPagina;
-  const mostrarAlerta = () => {
-    Swal.fire("EXITO!", "SUS DATOS DE ELIMINARON CORRECTAMENTE", "success");
-    setTimeout(() => {
-      // Muestra la alerta de success
 
-      // Refresca la página
-      window.location.reload();
-    }, 3000);
-  };
   const deletear = async (coleccion, id) => {
     const db = getFirestore();
     await deleteDoc(doc(db, coleccion, id));
-    mostrarAlerta;
+    Swal.fire("EXITO!", "SUS DATOS DE ELIMINARON CORRECTAMENTE", "success");
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   };
 
   return (
