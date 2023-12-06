@@ -2,17 +2,19 @@ const StatsContainer = ({ name, number, value }) => {
   const className = value > 0 ? "verde" : "rojo";
   return (
     <div className="statsContainer">
-      <div></div>
-      <p className={className}>
-        {name}:{" "}
-        <p className="cashContainer">
+      <div className="dataContainer">
+        <p className={className}>{name}: </p>
+      </div>
+      <div>
+        {" "}
+        <p id="cashNumber" className={className}>
           {number.toLocaleString("es-AR", {
             style: "currency",
             currency: "ARS",
             minumumFractionDigits: 2,
           })}
         </p>
-      </p>
+      </div>
     </div>
   );
 };

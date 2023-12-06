@@ -83,7 +83,7 @@ li {
   align-items: center;
   font-family: "Poppins", sans-serif;
   gap: 15px;
-  height: 100px;
+  height: auto;
 }
 .ingreso_gastos {
   display: flex;
@@ -196,11 +196,13 @@ form {
   flex-direction: column;
   justify-content: center;
 }
-
-.cashContainer {
+#cashNumber {
   font-size: 30px;
+}
+
+.dataContainer {
   display: flex;
+  height: 10px;
   justify-content: center;
-  height: 100%;
   align-items: center;
 }

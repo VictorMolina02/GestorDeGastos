@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import Swal from "sweetalert2";
+
 const MoneyInput = () => {
   const db = getFirestore();
   const valorInicial = {
@@ -37,6 +39,15 @@ const MoneyInput = () => {
       console.error(error);
     }
     setData({ ...valorInicial });
+  };
+  const mostrarAlerta = () => {
+    Swal.fire("EXITO!", "SUS DATOS DE CARGARON CORRECTAMENTE", "success");
+    setTimeout(() => {
+      // Muestra la alerta de success
+
+      // Refresca la página
+      window.location.reload();
+    }, 3000);
   };
   return (
     <div className="moneyContainer">
@@ -83,7 +94,7 @@ const MoneyInput = () => {
                 onChange={capturarInputs}
                 value={data.mes}
               >
-                <option disabled>Seleccione:</option>
+                <option value="">Seleccione:</option>
                 <option value="Enero">Enero</option>
                 <option value="Febrero">Febrero</option>
                 <option value="Marzo">Marzo</option>
@@ -136,11 +147,12 @@ const MoneyInput = () => {
               onChange={capturarInputs}
               value={data.select}
             >
+              <option value="">Seleccione:</option>
               <option value="Ingreso">Ingreso</option>
               <option value="Gasto">Gasto</option>
             </select>
           </div>
-          <button type="submit" className="btn btn-success">
+          <button onClick={mostrarAlerta} className="btn btn-success">
             Enviar
           </button>
         </form>
