@@ -2,10 +2,10 @@
 
 Este proyecto es un gestor básico realizado con React JS y Vite. Utiliza las siguientes librerías:
 
-- Bootstrap
+- Bootstrap/React Bootstrap
 - React Router DOM
 - Firebase/Firestore
-- Toastify
+- SweetAlert2
 
 ## Instalación
 
